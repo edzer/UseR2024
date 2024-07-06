@@ -69,9 +69,10 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 ![](keynote.png)
 
 
-## the process of retiring maptools (2003), rgdal (2003) and rgeos(2011)
+## Retiring maptools (2003), rgdal (2003) and rgeos(2011)
 
 Reasons to do this:
+
 * having simple features in R simplifies (WKB binary serialization)
 * raster data analysis moved to stars (2018) and terra (2020)
 * the time had come to say goodbey ; RB being the BDFL; Robert and me involved to take over
