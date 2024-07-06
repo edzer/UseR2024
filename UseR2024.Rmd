@@ -62,35 +62,24 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 * The code is hard to read 
     * uses `.Call()`, rather than `Rcpp` or similar
     * many conditional branches for upstream changes
-* The packages are mostly obsolete
+* having simple features in R (`sf`) simplifies (WKB binary serialization)
+* raster data analysis moved to stars (2018) and terra (2020)
+* R Consortium funded an evolution project
+
 
 ---- 
 
 ![](keynote.png)
 
-
-## Retiring maptools (2003), rgdal (2003) and rgeos(2011)
-
-Reasons to do this:
-
-* having simple features in R simplifies (WKB binary serialization)
-* raster data analysis moved to stars (2018) and terra (2020)
-* the time had come to say goodbey ; RB being the BDFL; Robert and me involved to take over
-* announcing early: UseR! 2021 keynote; twitter, generous time frame with deadline end of 2023)
-* R Consortium funded an evolution project, where we chose a time frame
-* A reference group of key package developers and user community representatives helped us giving feedback on planning and approach
-
 ## How?
 
-* terra in 2018-20 took over from raster (raster was a larger, often indirect rev dep for rgdal)
+* terra in 2018-20 took over `rgdal` dep from raster
 * progress reported to r-spatial evolution blogs (for motivation)
 * handling reverse dependencies (starting 2022 RC project)
    - package raster dropped dependency on rgdal and rgeos (Sept 2022), using terra instead
-   - reverse dependency checks
-   - time graphs of the number of remaining dependent packages
-   - having a status indicator in sp to emulate removal, allowing running revdep checks under the removal scenarios
+   - reverse dependency checks, emulating removal; monitor
    - **heavy** startup warnings in `sp` (worried people who were not affected!)
-   - june 23 flipped the switch in `sp`
+   - flip switch in `sp` in june 2023
 
 ----
 
@@ -99,21 +88,44 @@ https://link.springer.com/article/10.1007/s10109-020-00336-0
 
 ## Harder dependencies
 
-* `URSA`, `fiesta`: used rgdal internals heavily (not sp classes); 
-    * `fiesta` (USDA) developed `gdalraster`, which provides a low-level GDAL interface for R
-    * `URSA` now imports `sf`, and suggests `gdalraster`, `terra`, and `stars`
+* `fiesta` (USDA) developed `gdalraster`, which provides a low-level GDAL interface for R
+* `URSA` now imports `sf`, and suggests `gdalraster`, `terra`, and `stars`
 * More response from GH issues than from emails to pkg maintainers
 * it was necessary to be irritating, and provide patches for numerous pkgs (by RB); 
 * `pkgapi` was very useful: what is a package using? (S4 methods reporting patchy)
 
-##  What happened to (published) workflows, not in package tests/vignettes?
+##  Watchlist: started jun 2023
 
-Michael Delmelle comments;
+* ran nightly to see whether a revision had appeared
+* check whether it fixed revdep issue, look into & report
+* final removal at release date of R 4.1 (Oct 2023)
+* Watchlist output and code used is on the GH evolution repo.
+* Data and wode is on [github.com/r-spatial/evolution](https://github.com/r-spatial/evolution)
 
-Watchlist jun 2023, ran nightly to see whether a revision had appeared; check whether it fixed
-revdep issue, look into & report; final removal at release date of R 4.1
-Watchlist output is on the GH evolution repo.
+----
 
-Code for this is on evolution website (check before that it is there).
+![](ts1.png)
 
+----
 
+![](ts2.png)
+
+----
+
+![](ts3.png)
+
+## Recommendations
+
+If you want to retire one or more heavily used CRAN packages and limit damage to CRAN:
+
+* announce early, widely, loudly and often
+* actively approach package maintainers, irritate them, help them
+* closely watch the development of reverse dependencies
+* communicate with the CRAN team
+* ask for help and support from the community
+
+## Thanks to
+
+* Roger Bivand for his tireless efforts
+* R Consortium for supporting this project
+* A reference group of key package developers and user community representatives who helped us giving feedback on planning and approach
