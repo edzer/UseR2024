@@ -372,6 +372,10 @@ Edzer Pebesma, Roger Bivand
 <section class="slide level2">
 
 
+<img data-src="sp.png" class="r-stretch"></section>
+<section class="slide level2">
+
+
 <img data-src="spverse.png" class="r-stretch"></section>
 <section id="some-history-of-r-spatial-2" class="slide level2">
 <h2>Some history of r-spatial (2)</h2>
@@ -408,11 +412,15 @@ Edzer Pebesma, Roger Bivand
 <li>uses <code>.Call()</code>, rather than <code>Rcpp</code> or similar</li>
 <li>many conditional branches for upstream changes</li>
 </ul></li>
-<li>having simple features in R (<code>sf</code>) simplifies (WKB binary serialization)</li>
+<li>simple features in R (<code>sf</code>) simplifies life, a lot.</li>
 <li>raster data analysis moved to stars (2018) and terra (2020)</li>
-<li>R Consortium funded an evolution project</li>
+<li>R Consortium funded an <em>evolution</em> project</li>
 </ul>
 </section>
+<section class="slide level2">
+
+
+<img data-src="blog.png" class="r-stretch"></section>
 <section class="slide level2">
 
 
@@ -427,7 +435,7 @@ Edzer Pebesma, Roger Bivand
 <li>package raster dropped dependency on rgdal and rgeos (Sept 2022), using terra instead</li>
 <li>reverse dependency checks, emulating removal; monitor</li>
 <li><strong>heavy</strong> startup warnings in <code>sp</code> (worried people who were not affected!)</li>
-<li>flip switch in <code>sp</code> in june 2023</li>
+<li>remove <code>rgdal</code> and <code>rgeos</code> dependencies of <code>sp</code> in june 2023</li>
 </ul></li>
 </ul>
 </section>

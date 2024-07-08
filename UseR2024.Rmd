@@ -34,6 +34,10 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 
 ----
 
+![](sp.png)
+
+----
+
 ![](spverse.png)
 
 ## Some history of r-spatial (2)
@@ -62,10 +66,13 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 * The code is hard to read 
     * uses `.Call()`, rather than `Rcpp` or similar
     * many conditional branches for upstream changes
-* having simple features in R (`sf`) simplifies (WKB binary serialization)
+* simple features in R (`sf`) simplifies life, a lot.
 * raster data analysis moved to stars (2018) and terra (2020)
-* R Consortium funded an evolution project
+* R Consortium funded an _evolution_ project
 
+----
+
+![](blog.png)
 
 ---- 
 
@@ -79,7 +86,7 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
    - package raster dropped dependency on rgdal and rgeos (Sept 2022), using terra instead
    - reverse dependency checks, emulating removal; monitor
    - **heavy** startup warnings in `sp` (worried people who were not affected!)
-   - flip switch in `sp` in june 2023
+   - remove `rgdal` and `rgeos` dependencies of `sp` in june 2023
 
 ----
 
