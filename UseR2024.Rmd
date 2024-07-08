@@ -40,6 +40,11 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 
 ![](spverse.png)
 
+## Reverse dependencies Sep 2021
+
+![](revdeps.png)
+
+
 ## Some history of r-spatial (2)
 
 * CRAN binary packages are static builds, meaning they include upstream libraries (GEOS, PROJ, GDAL)
@@ -68,7 +73,7 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
     * many conditional branches for upstream changes
 * simple features in R (`sf`) simplifies life, a lot.
 * raster data analysis moved to stars (2018) and terra (2020)
-* R Consortium funded an _evolution_ project
+* R Consortium funded an _evolution_ project (Sept 21 call)
 
 ----
 
