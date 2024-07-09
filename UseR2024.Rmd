@@ -72,7 +72,7 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
     * uses `.Call()`, rather than `Rcpp` or similar
     * many conditional branches for upstream changes
 * simple features in R (`sf`) simplifies life, a lot.
-* raster data analysis moved to stars (2018) and terra (2020)
+* raster data analysis moved to `stars` (2018) and `terra` (2020)
 * R Consortium funded an _evolution_ project (Sept 21 call)
 
 ----
@@ -85,13 +85,13 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 
 ## How?
 
-* terra in 2018-20 took over `rgdal` dep from raster
+* `terra` in 2018-20 took over `rgdal` dep from `raster`
 * progress reported to r-spatial evolution blogs (for motivation)
 * handling reverse dependencies (starting 2022 RC project)
-   - package raster dropped dependency on rgdal and rgeos (Sept 2022), using terra instead
+   - package `raster` dropped dependency on `rgdal` and `rgeos` (Sept 2022), using `terra` instead
    - reverse dependency checks, emulating removal; monitor
    - **heavy** startup warnings in `sp` (worried people who were not affected!)
-   - remove `rgdal` and `rgeos` dependencies of `sp` in june 2023
+   - remove `rgdal` and `rgeos` dependencies of `sp` in favour of `sf` in june 2023
 
 ----
 
@@ -110,9 +110,9 @@ https://link.springer.com/article/10.1007/s10109-020-00336-0
 
 * ran nightly to see whether a revision had appeared
 * check whether it fixed revdep issue, look into & report
-* final removal at release date of R 4.1 (Oct 2023)
+* final removal at release date of Bioconductor 3.18 (Oct 2023)
 * Watchlist output and code used is on the GH evolution repo.
-* Data and wode is on [github.com/r-spatial/evolution](https://github.com/r-spatial/evolution)
+* Data and code is on [github.com/r-spatial/evolution](https://github.com/r-spatial/evolution)
 
 ----
 
