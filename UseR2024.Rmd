@@ -102,7 +102,7 @@ https://link.springer.com/article/10.1007/s10109-020-00336-0
 
 * `fiesta` (USDA) developed `gdalraster`, which provides a low-level GDAL interface for R
 * `URSA` now imports `sf`, and suggests `gdalraster`, `terra`, and `stars`
-* More response from GH issues than from emails to pkg maintainers
+* More response from Github, Gitlab and R-forge issues backed up by emails than from emails alone to pkg maintainers
 * it was necessary to be irritating, and provide patches for numerous pkgs (by RB); 
 * `pkgapi` was very useful: what is a package using? (S4 methods reporting patchy)
 
