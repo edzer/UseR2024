@@ -417,7 +417,7 @@ Edzer Pebesma, Roger Bivand
 <li>many conditional branches for upstream changes</li>
 </ul></li>
 <li>simple features in R (<code>sf</code>) simplifies life, a lot.</li>
-<li>raster data analysis moved to stars (2018) and terra (2020)</li>
+<li>raster data analysis moved to <code>stars</code> (2018) and <code>terra</code> (2020)</li>
 <li>R Consortium funded an <em>evolution</em> project (Sept 21 call)</li>
 </ul>
 </section>
@@ -432,14 +432,13 @@ Edzer Pebesma, Roger Bivand
 <section id="how" class="slide level2">
 <h2>How?</h2>
 <ul>
-<li>terra in 2018-20 took over <code>rgdal</code> dep from raster</li>
 <li>progress reported to r-spatial evolution blogs (for motivation)</li>
 <li>handling reverse dependencies (starting 2022 RC project)
 <ul>
-<li>package raster dropped dependency on rgdal and rgeos (Sept 2022), using terra instead</li>
+<li>package <code>raster</code> dropped dependency on <code>rgdal</code> and <code>rgeos</code> (Sept 2022), using <code>terra</code> instead</li>
 <li>reverse dependency checks, emulating removal; monitor</li>
 <li><strong>heavy</strong> startup warnings in <code>sp</code> (worried people who were not affected!)</li>
-<li>remove <code>rgdal</code> and <code>rgeos</code> dependencies of <code>sp</code> in june 2023</li>
+<li>remove <code>rgdal</code> and <code>rgeos</code> dependencies of <code>sp</code> in favour of <code>sf</code> in june 2023</li>
 </ul></li>
 </ul>
 </section>
@@ -452,7 +451,7 @@ Edzer Pebesma, Roger Bivand
 <ul>
 <li><code>fiesta</code> (USDA) developed <code>gdalraster</code>, which provides a low-level GDAL interface for R</li>
 <li><code>URSA</code> now imports <code>sf</code>, and suggests <code>gdalraster</code>, <code>terra</code>, and <code>stars</code></li>
-<li>More response from GH issues than from emails to pkg maintainers</li>
+<li>More response from Github, Gitlab and R-forge issues backed up by emails than from emails alone to pkg maintainers</li>
 <li>it was necessary to be irritating, and provide patches for numerous pkgs (by RB);</li>
 <li><code>pkgapi</code> was very useful: what is a package using? (S4 methods reporting patchy)</li>
 </ul>
@@ -462,9 +461,9 @@ Edzer Pebesma, Roger Bivand
 <ul>
 <li>ran nightly to see whether a revision had appeared</li>
 <li>check whether it fixed revdep issue, look into &amp; report</li>
-<li>final removal at release date of R 4.1 (Oct 2023)</li>
+<li>final removal at release date of Bioconductor 3.18 (Oct 2023)</li>
 <li>Watchlist output and code used is on the GH evolution repo.</li>
-<li>Data and wode is on <a href="https://github.com/r-spatial/evolution">github.com/r-spatial/evolution</a></li>
+<li>Data and code is on <a href="https://github.com/r-spatial/evolution">github.com/r-spatial/evolution</a></li>
 </ul>
 </section>
 <section class="slide level2">
