@@ -8,7 +8,7 @@ format: revealjs
 
 * some history of OSGEO and r-spatial
 * why packages retire
-* how we did it
+* how we tried to minimize damage to the CRAN ecosystem
 * lessons learned / future recommendations
 
 ## Some history of OSGEO
@@ -85,7 +85,7 @@ R, Python, Julia, QGIS, ArcGIS, PostGIS, etc all use this.
 
 ## How?
 
-* progress reported to r-spatial evolution blogs (for motivation)
+* progress reported to four r-spatial.org evolution blogs (for motivation)
 * handling reverse dependencies (starting 2022 RC project)
    - package `raster` dropped dependency on `rgdal` and `rgeos` (Sept 2022), using `terra` instead
    - reverse dependency checks, emulating removal; monitor
@@ -102,7 +102,7 @@ https://link.springer.com/article/10.1007/s10109-020-00336-0
 * `fiesta` (USDA) developed `gdalraster`, which provides a low-level GDAL interface for R
 * `URSA` now imports `sf`, and suggests `gdalraster`, `terra`, and `stars`
 * More response from Github, Gitlab and R-forge issues backed up by emails than from emails alone to pkg maintainers
-* it was necessary to be irritating, and provide patches for numerous pkgs (by RB); 
+* it was necessary to be irritating, and provide patches for numerous pkgs (by RB) 
 * `pkgapi` was very useful: what is a package using? (S4 methods reporting patchy)
 
 ##  Watchlist: started jun 2023
@@ -110,7 +110,7 @@ https://link.springer.com/article/10.1007/s10109-020-00336-0
 * ran nightly to see whether a revision had appeared
 * check whether it fixed revdep issue, look into & report
 * final removal at release date of Bioconductor 3.18 (Oct 2023)
-* Watchlist output and code used is on the GH evolution repo.
+* Watchlist output and code used is on the GH evolution repo
 * Data and code is on [github.com/r-spatial/evolution](https://github.com/r-spatial/evolution)
 
 ----
